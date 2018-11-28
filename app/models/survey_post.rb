@@ -1,0 +1,2 @@
+class SurveyPost < ApplicationRecord
+end
