@@ -1,13 +1,13 @@
 class SurveysController < ApplicationController
   def index
-    @surveys = SurveyPost.all
+    @surveys = Survey.all
   end
 
   def new
   end
 
   def create
-    @survey = SurveyPost.new(survey_params)
+    @survey = Survey.new(survey_params)
     @survey.save
 
     redirect_to surveys_path
@@ -16,6 +16,6 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey_post).permit(:title, :body)
+    params.require(:survey).permit(:title, :body)
   end
 end
