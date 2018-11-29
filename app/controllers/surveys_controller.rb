@@ -8,9 +8,11 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
-    @survey.save
-
-    redirect_to surveys_path
+    if @survey.save
+      redirect_to surveys_path
+    else
+      render 'new'
+    end
   end
 
   private
