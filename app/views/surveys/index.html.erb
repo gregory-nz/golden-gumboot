@@ -1,15 +1,18 @@
 <% @surveys.each do |survey| %>
   <div class="card w-auto shadow-sm" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to survey.title, survey, {:style => 'color: black'} %></h5>
-      <p class="card-text"><%= survey.body %></p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">
-        Created: <%=survey.created_at%> |
-        Last Updated: <%=survey.updated_at%>
-      </small>
-    </div>
+    <a href="<%=survey_path(survey)%>">
+      <div class="card-body">
+        <h5 class="card-title"><%= survey.title %></h5>
+        <p class="card-text"><%= survey.body %></p>
+      </div>
+      </a>
+      <div class="card-footer">
+        <small class="text-muted">
+          Created: <%=survey.created_at%> |
+          Last Updated: <%=survey.updated_at%>
+        </small>
+      </div>
+    <!-- </a> -->
   </div>
 <br>
 <% end %>

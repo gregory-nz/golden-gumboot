@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:session][:username].downcase)
     puts user
-    if user && user.authenticate(params[:session][:password])
-      puts 'attempting log in'
+    if user&.authenticate(params[:session][:password])
       log_in user
       redirect_to controller: 'surveys', action: 'index'
     else
@@ -19,10 +18,4 @@ class SessionsController < ApplicationController
     log_out
     redirect_to login_path
   end
-
-  private
-
-  def session_params
-  end
-
 end
