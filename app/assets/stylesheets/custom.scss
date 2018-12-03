@@ -2,7 +2,6 @@
 
 .header {
   background-color: black;
-  height: 100px;
 }
 
 .title {
@@ -19,12 +18,9 @@
   }
 }
 
-.vertical-center {
-  margin: 0;
+.vertical-fix {
   position: relative;
-  top: 25%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 100px;
 }
 
 .submit {
@@ -39,6 +35,10 @@
 
 .card-text {
 
+}
+
+.navbar-text {
+  color: white;
 }
 
 body {

@@ -9,16 +9,23 @@
   </head>
 
   <body>
-    <li class="header">
-      <div class="vertical-center">
+    <nav class="navbar fixed-top header">
         <div class='container'>
         <%= link_to 'POLL DANCER 💃', root_path, :class => 'btn btn-link title' %>
+        <%if !@hide_login%>
+          <% if logged_in? %>
+            <span class='navbar-text'>
+              <p>Logged in as:
+                <b><%=link_to current_user.username, current_user, {:style => 'color: white'}%></b>
+                 | <%= link_to "Log out", logout_path, method: :delete %>
+              </p>
+            </span>
+          <% end %>
+        <% end %>
         </div>
-      </div>
-    </li>
+    </nav>
 
-    <br>
-    <div class="container">
+    <div class="container vertical-fix">
     <%= yield %>
     </div>
   </body>

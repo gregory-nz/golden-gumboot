@@ -1,13 +1,17 @@
 class SurveysController < ApplicationController
   def index
-    @surveys = Survey.all
+    if logged_in?
+      @surveys = current_user.survey
+    else
+      redirect_to login_path
+    end
   end
 
   def new
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    @survey = current_user.survey.new(survey_params)
     if @survey.save
       redirect_to surveys_path
     else

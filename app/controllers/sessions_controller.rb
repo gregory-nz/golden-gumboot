@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @hide_login = true
   end
 
   def create
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to login_url
+    redirect_to login_path
   end
 
   private
