@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       redirect_to controller: 'surveys', action: 'index'
+    elsif @user.password != @user.password_confirmation
+      flash.now[:danger] = 'Passwords do not match'
+      render 'new'
     else
+      flash.now[:danger] = 'Username not available'
       render 'new'
     end
   end
