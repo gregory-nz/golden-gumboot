@@ -16,8 +16,8 @@
           <% if logged_in? %>
             <span class='navbar-text'>
               <p>Logged in as:
-                <b><%=link_to current_user.username, current_user, {:style => 'color: white'}%></b>
-                 | <%= link_to "Log out", logout_path, method: :delete %>
+                <b><%=link_to current_user.username, current_user, style:'color:white'%></b>
+                 | <b><%= link_to "Log out", logout_path, method: :delete%></b>
               </p>
             </span>
           <% end %>

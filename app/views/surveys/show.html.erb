@@ -1,3 +1,6 @@
+<span class="float-right">
+  <%= link_to "Delete", survey_path(@survey), method: :delete, style:'color:red',data: {confirm: "Are you sure?"} %>
+</span>
 <h1><%=@survey.title%></h1>
 <br>
 <p><%=@survey.body%></p>

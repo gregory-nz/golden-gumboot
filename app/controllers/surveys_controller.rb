@@ -23,6 +23,12 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
   end
 
+  def destroy
+    @survey = Survey.find(params[:id])
+    @survey.destroy
+    redirect_to root_path
+  end
+
   private
 
   def survey_params
