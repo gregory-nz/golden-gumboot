@@ -1,0 +1,16 @@
+<% @surveys.each do |survey| %>
+<div class="card w-auto shadow-sm" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= survey.title %></h5>
+    <p class="card-text">
+      <%= survey.body %></p>
+  </div>
+</div>
+<br>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to 'New', new_survey_path(@survey), :class => 'btn btn-danger btn-lg btn-block shadow' %>
+</div>
