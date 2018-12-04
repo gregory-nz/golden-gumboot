@@ -1,10 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :index_redirect, except: :destroy
   def new
-    if logged_in?
-      redirect_to root_path
-    else
-      @hide_login = true
-    end
+    @hide_login = true
   end
 
   def create
@@ -22,5 +19,11 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to login_path
+  end
+
+  private
+
+  def index_redirect
+    redirect_to root_path if logged_in?
   end
 end

@@ -1,10 +1,7 @@
 class SurveysController < ApplicationController
+  before_action :login_redirect
   def index
-    if logged_in?
-      @surveys = current_user.surveys
-    else
-      redirect_to login_path
-    end
+    @surveys = current_user.surveys
   end
 
   def new
@@ -33,5 +30,9 @@ class SurveysController < ApplicationController
 
   def survey_params
     params.require(:survey).permit(:title, :body)
+  end
+
+  def login_redirect
+    redirect_to login_path unless logged_in?
   end
 end
