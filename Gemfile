@@ -33,8 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Phase-1 gems
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+
+# Phase-2 gems
+gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

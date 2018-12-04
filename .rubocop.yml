@@ -1,0 +1,107 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: 'indented'
+
+Metrics/LineLength:
+  Max: 100
+  AllowHeredoc: true
+  AllowURI: true
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+    - 'db/schema.rb'
+
+Metrics/ClassLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+    - 'db/schema.rb'
+
+Metrics/BlockNesting:
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - '**/spec/**/*_spec.rb'
+    - 'db/migrate/**/*.rb'
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    find: 'detect'
+    find_all: 'select'
+    length: 'size'
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': '()'
+    '%I': '()'
+    '%r': '()'
+    '%w': '()'
+    '%W': '()'
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: 'variable'
+
+Rails/Output:
+  Description: 'Checks for calls to puts, print, etc.'
+  Enabled: true
