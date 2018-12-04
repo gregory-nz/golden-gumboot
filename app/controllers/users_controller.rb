@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to controller: 'surveys', action: 'index'
+      redirect_to root_path
     elsif @user.password != @user.password_confirmation
       flash.now[:danger] = 'Passwords do not match'
       render 'new'
