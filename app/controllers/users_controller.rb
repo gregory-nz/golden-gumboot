@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
   def new
+    if logged_in?
+      redirect_to root_path
+    else
+      @hide_login = true
+    end
   end
 
   def create
