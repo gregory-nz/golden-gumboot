@@ -1,19 +1,20 @@
 <% @surveys.each do |survey| %>
-  <div class="card w-auto shadow-sm" style="width: 18rem;">
-    <a href="<%=survey_path(survey)%>">
-      <div class="card-body">
-        <h5 class="card-title"><%= survey.title %></h5>
-        <p class="card-text"><%= survey.body %></p>
-      </div>
-    </a>
-    <div class="card-footer">
-      <small class="text-muted">
-        Created: <%=survey.created_at%> |
-        Last Updated: <%=survey.updated_at%>
-      </small>
-      <div class="float-right">
-        <%= link_to "Delete", survey_path(survey), method: :delete, style:'color:red',data: {confirm: "Are you sure?"} %>
-      </div>
+  <div class="pop">
+    <div class="card w-auto shadow-sm" style="width: 18rem;">
+      <a href="<%=survey_path(survey)%>" class="black-links">
+        <div class="card-body">
+          <h5 class="card-title"><%= survey.title %></h5>
+          <p class="card-text"><%= survey.body %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+            Created: <%=survey.created_at%> | Last Updated: <%=survey.updated_at%>
+          </small>
+          <span>
+            <%= link_to "Delete", survey_path(survey), method: :delete, class: 'red-right', data: {confirm: "Are you sure?"} %>
+          </span>
+        </div>
+      </a>
     </div>
   </div>
 <br>

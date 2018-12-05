@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   before_action :index_redirect, except: :destroy
   def new
-    @hide_login = true
   end
 
   def create
