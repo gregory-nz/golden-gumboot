@@ -1,0 +1,10 @@
+<span>
+  <%= link_to "Delete", survey_path(@survey), method: :delete, class:'red-right', data: {confirm: "Are you sure?"} %>
+</span>
+<h1>Edit <%=@survey.title%></h1>
+<%= render 'form' %>
+<br>
+<hr />
+<small class="text-muted">
+  Created: <%=@survey.created_at%> | Last Updated: <%=@survey.updated_at%>
+</small>

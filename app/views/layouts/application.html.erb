@@ -12,10 +12,10 @@
     <nav class="navbar fixed-top header">
         <div class='container'>
         <%= link_to 'POLL DANCER 💃', root_path, :class => 'btn btn-link title' %>
-            <span class='navbar-text'>
+            <span class='white-text'>
               <p>Logged in as:
-                <b><%=link_to current_user.username, current_user, style:'color:white'%></b>
-                 | <b><%= link_to "Log out", logout_path, method: :delete%></b>
+                <b><%=link_to current_user.username, current_user, class:'white-text'%></b>
+                 | <b><%= link_to "Log out", logout_path, method: :delete, class:'blue-text'%></b>
               </p>
             </span>
         </div>

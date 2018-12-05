@@ -1,5 +1,7 @@
 @import 'bootstrap';
 
+$blue: #007bff;
+
 .header {
   background-color: black;
 }
@@ -14,7 +16,8 @@
   -moz-border-radius: 8px;
   border-radius: 8px;
   &:hover {
-    color: white
+    color: red;
+    text-decoration: none;
   }
 }
 
@@ -33,6 +36,22 @@
 .pop {
   &:hover {
     box-shadow: 0 0 10px grey;
+  }
+}
+
+.delete-btn {
+  color: red;
+  &:hover {
+    color: white;
+    background-color: red;
+  }
+}
+
+.edit-btn {
+  color: $blue;
+  &:hover {
+    color: white;
+    background-color: $blue;
   }
 }
 
@@ -58,8 +77,18 @@
   color: black;
 }
 
-.navbar-text {
+.white-text {
   color: white;
+  &:hover {
+    color:white;
+  }
+}
+
+.blue-text {
+  color: $blue;
+  &:hover {
+    color: $blue;
+  }
 }
 
 body {

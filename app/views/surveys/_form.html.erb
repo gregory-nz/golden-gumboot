@@ -1,0 +1,15 @@
+<%= form_for @survey do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.submit 'Submit', :class => 'btn btn-danger btn-lg shadow submit'%>
+  </p>
+<% end %>

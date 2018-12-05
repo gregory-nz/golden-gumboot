@@ -10,8 +10,9 @@
           <small class="text-muted">
             Created: <%=survey.created_at%> | Last Updated: <%=survey.updated_at%>
           </small>
-          <span>
-            <%= link_to "Delete", survey_path(survey), method: :delete, class: 'red-right', data: {confirm: "Are you sure?"} %>
+          <span class="float-right">
+              <%= link_to "Delete", survey_path(survey), method: :delete, class:'btn btn-sm delete-btn float-right', data: {confirm: "Are you sure?"} %>
+              <%= link_to "Edit", edit_survey_path(survey), class:'btn btn-sm edit-btn float-right'%>
           </span>
         </div>
       </a>
