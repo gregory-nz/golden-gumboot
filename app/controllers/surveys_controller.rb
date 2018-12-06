@@ -12,6 +12,7 @@ class SurveysController < ApplicationController
   def create
     @survey = current_user.surveys.new(survey_params)
     if @survey.save
+      flash[:success] = "Survey successfully created!"
       redirect_to root_path
     else
       render 'new'
