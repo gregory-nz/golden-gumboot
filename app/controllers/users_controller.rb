@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-
   def new
+    index_redirect
+    @hide_login = true
   end
 
   def create
@@ -31,5 +32,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)
+  end
+
+  def index_redirect
+    redirect_to root_path if logged_in?
   end
 end

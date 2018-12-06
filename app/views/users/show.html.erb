@@ -1,6 +1,6 @@
 <p><b>Username:</b> <%= @user.username %>
-  <span class="float-right">
-    <%= link_to "Delete User", user_path(@user), method: :delete, style:'color:red',data: {confirm: "Are you sure?"} %>
+  <span>
+    <%= link_to "Delete User", user_path(@user), method: :delete, class:'btn delete-btn float-right', data: {confirm: "Are you sure?"} %>
   </span>
 </p>
 <p><b>Created at:</b> <%= @user.created_at %></p>

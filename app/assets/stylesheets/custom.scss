@@ -1,5 +1,7 @@
 @import 'bootstrap';
 
+$blue: #007bff;
+
 .header {
   background-color: black;
 }
@@ -14,13 +16,67 @@
   -moz-border-radius: 8px;
   border-radius: 8px;
   &:hover {
-    color: white
+    color: red;
+    text-decoration: none;
   }
 }
 
 .vertical-fix {
   position: relative;
   top: 100px;
+}
+
+.no-pad {
+  padding: 0;
+}
+
+.q-box {
+  width: 89.5%;
+}
+
+.black-links {
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.pop {
+  &:hover {
+    box-shadow: 0 0 10px grey;
+  }
+}
+
+.delete-btn {
+  color: red;
+  &:hover {
+    color: white;
+    background-color: red;
+  }
+}
+
+.edit-btn {
+  color: $blue;
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
+}
+
+.btn-primary {
+  background-color: $blue;
+}
+
+.red-right {
+  color: red;
+  float: right;
+  &:hover {
+    color: red;
+  }
+}
+
+.btn-danger {
+  background-color: red;
 }
 
 .submit {
@@ -37,8 +93,25 @@
   color: black;
 }
 
-.navbar-text {
+.white-text {
   color: white;
+  &:hover {
+    color:white;
+  }
+}
+
+.blue-text {
+  color: $blue;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.red-text {
+  color: red;
+  &:hover {
+    color: red;
+  }
 }
 
 body {

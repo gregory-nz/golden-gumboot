@@ -1,0 +1,30 @@
+<%= form_for @survey do |form| %>
+  <p>
+    <%= form.label :title, "Survey Title:" %><br>
+    <%= form.text_field :title, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :body, "Description:" %><br>
+    <%= form.text_area :body, :class => 'form-control' %>
+  </p>
+
+  <hr /><h4>Questions:</h4>
+
+  <p>
+    <%= form.fields_for :questions do |question| %>
+      <%= render 'question_fields', f: question %>
+    <%end%>
+  </p>
+
+  <p>
+    <%= link_to_add_association 'Add Question +', form, :questions, class: 'btn btn-primary'%>
+  </p>
+
+  <hr />
+
+  <p>
+    <%= form.submit 'Submit', :class => 'btn btn-lg btn-danger shadow submit'%> &nbsp
+    <%= link_to 'Cancel', root_path, :class => 'btn btn-link red-text submit'%>
+  </p>
+<% end %>

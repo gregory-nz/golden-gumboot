@@ -1,37 +1,57 @@
 class SurveysController < ApplicationController
+  before_action :login_redirect
+  before_action :find_survey, only: [:show, :edit, :update, :destroy]
   def index
-    if logged_in?
-      @surveys = current_user.surveys
-    else
-      redirect_to login_path
-    end
+    @surveys = current_user.surveys
   end
 
   def new
+    @survey = Survey.new
   end
 
   def create
     @survey = current_user.surveys.new(survey_params)
     if @survey.save
-      redirect_to surveys_path
+      flash[:success] = "Survey successfully created!"
+      redirect_to root_path
     else
       render 'new'
     end
   end
 
   def show
-    @survey = Survey.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @survey.update(survey_params)
+      flash[:success] = "Survey successfully updated!"
+      redirect_to @survey
+    else
+      flash[:danger] = "Failed to edit form!"
+      render 'edit'
+    end
   end
 
   def destroy
-    @survey = Survey.find(params[:id])
     @survey.destroy
+    flash[:danger] = @survey.title + " successfully deleted"
     redirect_to root_path
   end
 
   private
 
   def survey_params
-    params.require(:survey).permit(:title, :body)
+    params.require(:survey).permit(:title, :body, questions_attributes: [:id, :question, :_destroy])
+  end
+
+  def login_redirect
+    redirect_to login_path unless logged_in?
+  end
+
+  def find_survey
+    @survey = Survey.find(params[:id])
   end
 end
