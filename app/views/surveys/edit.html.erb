@@ -1,7 +1,7 @@
-<span>
-  <%= link_to "Delete", survey_path(@survey), method: :delete, class:'red-right', data: {confirm: "Are you sure?"} %>
+<span class="float-right">
+  <%= link_to "Delete", survey_path(@survey), method: :delete, class:'btn delete-btn', data: {confirm: "Are you sure?"} %>
 </span>
-<h1>Edit <%=@survey.title%></h1>
+<h4>Edit <%=@survey.title%></h4>
 <%= render 'form' %>
 <br>
 <hr />

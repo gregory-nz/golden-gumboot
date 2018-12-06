@@ -6,6 +6,13 @@
 <br>
 <p><%=@survey.body%></p>
 <br>
+<hr /><h4>Questions:</h4><br>
+<% @survey.questions.each do |question| %>
+  <p><b>Question: </b>
+    <%= question.question %>
+    <br>
+  </p>
+<%end%>
 <hr />
 <small class="text-muted">
   Created: <%=@survey.created_at%> | Last Updated: <%=@survey.updated_at%>

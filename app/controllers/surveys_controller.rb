@@ -43,7 +43,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:title, :body)
+    params.require(:survey).permit(:title, :body, questions_attributes: [:id, :question, :_destroy])
   end
 
   def login_redirect

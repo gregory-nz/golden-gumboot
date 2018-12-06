@@ -26,6 +26,14 @@ $blue: #007bff;
   top: 100px;
 }
 
+.no-pad {
+  padding: 0;
+}
+
+.q-box {
+  width: 89.5%;
+}
+
 .black-links {
   &:hover {
     color: black;
@@ -55,12 +63,20 @@ $blue: #007bff;
   }
 }
 
+.btn-primary {
+  background-color: $blue;
+}
+
 .red-right {
   color: red;
   float: right;
   &:hover {
     color: red;
   }
+}
+
+.btn-danger {
+  background-color: red;
 }
 
 .submit {
@@ -88,6 +104,13 @@ $blue: #007bff;
   color: $blue;
   &:hover {
     color: $blue;
+  }
+}
+
+.red-text {
+  color: red;
+  &:hover {
+    color: red;
   }
 }
 
