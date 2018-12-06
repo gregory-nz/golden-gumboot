@@ -6,8 +6,8 @@
           <span class="text-muted float-right">
               <%=pluralize(survey.questions.length, "Question")%> | <%=pluralize(survey.responses.length, "Response")%>
           </span>
-          <h5 class="card-title"><%= survey.title %></h5>
-          <p class="card-text"><%= survey.body %></p>
+          <h5 class="card-title"><%= truncate(survey.title, :length => 60) %></h5>
+          <p class="card-text"><%= truncate(survey.body, :length => 100) %></p>
         </div>
         <div class="card-footer">
           <small class="text-muted">
