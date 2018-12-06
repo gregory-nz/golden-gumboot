@@ -52,6 +52,9 @@ class SurveysController < ApplicationController
   end
 
   def find_survey
-    @survey = Survey.find(params[:id])
+    @survey = current_user.surveys.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:danger] = "Survey not found!"
+    redirect_to root_path
   end
 end
