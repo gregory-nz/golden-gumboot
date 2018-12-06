@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   before_action :login_redirect
   before_action :find_survey, only: [:show, :edit, :update, :destroy]
   def index
-    @surveys = current_user.surveys
+    @surveys = current_user.surveys.includes(:questions, :responses)
   end
 
   def new

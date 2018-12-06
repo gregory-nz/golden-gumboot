@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     index_redirect
-    @hide_login = true
   end
 
   def create

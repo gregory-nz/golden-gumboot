@@ -4,7 +4,7 @@
       <a href="<%=survey_path(survey)%>" class="black-links">
         <div class="card-body">
           <span class="text-muted float-right">
-              <%=pluralize(survey.questions.count, "Question")%> | <%=pluralize(survey.responses.count, "Response")%>
+              <%=pluralize(survey.questions.length, "Question")%> | <%=pluralize(survey.responses.length, "Response")%>
           </span>
           <h5 class="card-title"><%= survey.title %></h5>
           <p class="card-text"><%= survey.body %></p>
